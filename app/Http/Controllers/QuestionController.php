@@ -9,6 +9,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt', ['except' => ['index', 'show']]);
+    }
+
     public function index()
     {
         return QuestionResource::collection(Question::latest()->get());
