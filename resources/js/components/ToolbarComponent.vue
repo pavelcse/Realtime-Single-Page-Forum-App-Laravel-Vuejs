@@ -11,25 +11,35 @@
 
             <v-spacer></v-spacer>
 
-            <v-btn class="ma-2" rounded color="primary">
-                <span>Forum</span>
-                <v-icon>mdi-history</v-icon>
-            </v-btn>
+            <router-link to="/">
+                <v-btn class="ma-2" rounded color="primary">
+                    <span>Forum</span>
+                    <v-icon>mdi-history</v-icon>
+                </v-btn>
+            </router-link>
 
-            <v-btn class="ma-2" rounded color="primary">
-                <span>Ask Question</span>
-                <v-icon>mdi-heart</v-icon>
-            </v-btn>
+            <router-link to="/">
+                <v-btn class="ma-2" rounded color="primary">
+                    <span>Ask Question</span>
+                    <v-icon>mdi-heart</v-icon>
+                </v-btn>
+            </router-link>
 
-            <v-btn class="ma-2" rounded color="primary">
-                <span>Category</span>
-                <v-icon>mdi-map-marker</v-icon>
-            </v-btn>
+            <router-link to="/">
+                <v-btn class="ma-2" rounded color="primary">
+                    <span>Category</span>
+                    <v-icon>mdi-map-marker</v-icon>
+                </v-btn>
+            </router-link>
 
-            <v-btn class="ma-2" rounded color="primary">
-                <span>Login</span>
-                <v-icon>mdi-map-marker</v-icon>
-            </v-btn>
+            <router-link to="/login">
+                <v-btn class="ma-2" rounded color="primary">
+                    <span>Login</span>
+                    <v-icon>mdi-map-marker</v-icon>
+                </v-btn>
+            </router-link>
+
+
 
         </v-toolbar>
     </v-card>
