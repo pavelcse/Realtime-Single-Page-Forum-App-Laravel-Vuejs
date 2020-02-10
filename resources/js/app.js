@@ -9,9 +9,17 @@ require('./bootstrap');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
+import User from './helpers/User'
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
+window.User = User;
+
+// console.log(User.hasToken());
+// console.log(User.loggedIn());
+// console.log(User.name());
+// console.log(User.id());
+// User.logout();
 
 /**
  * The following block of code may be used to automatically register your
