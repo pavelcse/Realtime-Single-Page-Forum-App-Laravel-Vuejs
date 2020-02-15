@@ -14,6 +14,7 @@ import User from './helpers/User'
 Vue.use(VueRouter);
 Vue.use(Vuetify);
 window.User = User;
+window.EventBus = new Vue();
 
 // console.log(User.hasToken());
 // console.log(User.loggedIn());

@@ -11,35 +11,15 @@
 
             <v-spacer></v-spacer>
 
-            <router-link to="/">
+            <router-link v-for="(item, index) in items"
+                         :key="index"
+                         :to="item.to"
+                         v-if="item.show">
                 <v-btn class="ma-2" rounded color="primary">
-                    <span>Forum</span>
-                    <v-icon>mdi-history</v-icon>
+                    <span>{{ item.title }}</span>
+                    <v-icon>{{ item.icon }}</v-icon>
                 </v-btn>
             </router-link>
-
-            <router-link to="/">
-                <v-btn class="ma-2" rounded color="primary">
-                    <span>Ask Question</span>
-                    <v-icon>mdi-heart</v-icon>
-                </v-btn>
-            </router-link>
-
-            <router-link to="/">
-                <v-btn class="ma-2" rounded color="primary">
-                    <span>Category</span>
-                    <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-            </router-link>
-
-            <router-link to="/login">
-                <v-btn class="ma-2" rounded color="primary">
-                    <span>Login</span>
-                    <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-            </router-link>
-
-
 
         </v-toolbar>
     </v-card>
@@ -47,7 +27,23 @@
 
 <script>
     export default {
-        name: "ToolbarComponent"
+        name: "ToolbarComponent",
+        data() {
+            return {
+                items: [
+                    {title: 'Forum', to: '/forum', show: true, icon: ''},
+                    {title: 'Ask Question', to: '/ask', show: User.loggedIn(), icon: ''},
+                    {title: 'Category', to: '/category', show: User.loggedIn(), icon: ''},
+                    {title: 'Login', to: '/login', show: !User.loggedIn(), icon: ''},
+                    {title: 'Logout', to: '/logout', show: User.loggedIn(), icon: ''}
+                ]
+            }
+        },
+        created() {
+            EventBus.$on('logout', () => {
+                User.logout();
+            })
+        }
     }
 </script>
 
